@@ -6,6 +6,7 @@ import org.hibernate.search.Search;
 import org.hibernate.search.query.dsl.QueryBuilder;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,15 +22,15 @@ public class ProductDaoImpl extends AbstractDao implements ProductDao {
         //After adding an object outside of this project, the new ones need to be indexed.
         //Uncomment these lines, start application, wait until it will be indexed (this function must be called)
         //then turn off application, comment these lines and start application again
-        //log.setLevel(level);
-        //try {
-        //     Criteria criteria = getSession().createCriteria(Product.class);
-        //     criteria.list().forEach(o -> Search.getFullTextSession(getSession()).index(o));
-        //} catch (Exception ex) {
-        //     log.log(level, "Database WAS NOT indexed", ex);
-        //     return new ArrayList<>();
-        //}
-        //log.log(level, "Database was successfully indexed");
+//        log.setLevel(level);
+//        try {
+//             Criteria criteria = getSession().createCriteria(Product.class);
+//             criteria.list().forEach(o -> Search.getFullTextSession(getSession()).index(o));
+//        } catch (Exception ex) {
+//             log.log(level, "Database WAS NOT indexed", ex);
+//             return new ArrayList<>();
+//        }
+//        log.log(level, "Database was successfully indexed");
 
         Criteria criteria = getSession().createCriteria(Product.class);
         return (List<Product>) criteria.list();
